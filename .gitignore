@@ -5,8 +5,7 @@
 /GestionCourseMVVM/obj/
 /GestionCourseMVVM/bin/
 /.vs
-/GestionCourseMVVM.Android/GestionCourse.Android.csproj
-/GestionCourseMVVM.UWP/GestionCourse.UWP.csproj
+/GestionCourseMVVM.UWP/GestionCourseMVVM.UWP.csproj
 /GestionCourseMVVM/GestionCourse.csproj
 /GestionCourseMVVM/GestionCourseMVVM.csproj
 /GestionCourseMVVM.Android/GestionCourseMVVM.Android.csproj
