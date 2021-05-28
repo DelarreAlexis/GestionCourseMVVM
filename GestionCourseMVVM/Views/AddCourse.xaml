@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionCourseMVVM.Views.AddCourse">
+    
+    <StackLayout>
+        <Grid BackgroundColor="#0066CC">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Label Text="Ajout d'une course" VerticalOptions="Center" Grid.Row="0" FontSize="20" TextColor="White" Margin="10,0,0,0" HorizontalOptions="Start"/>
+        </Grid>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Entry Text="{Binding Course.Nom}" Placeholder="Nom" />
+            <Entry Text="{Binding Course.Distance}" Placeholder="Distance" />
+            <Entry Text="{Binding Course.Lieu}" Placeholder="Lieu" />
+        </StackLayout>
+        <Button x:Name="btnValider" VerticalOptions="End" HeightRequest="50" Text="Valider" TextColor="White" FontSize="20" BackgroundColor="#0066CC" Command="{Binding ValiderCommand}" />
+    </StackLayout>
+</ContentPage>

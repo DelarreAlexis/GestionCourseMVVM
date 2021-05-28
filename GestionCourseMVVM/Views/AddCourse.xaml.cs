@@ -12,17 +12,12 @@ using Xamarin.Forms.Xaml;
 namespace GestionCourseMVVM.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ListeCourses : ContentPage
+	public partial class AddCourse : ContentPage
 	{
-		public ListeCourses()
+		public AddCourse(ListView listView)
 		{
 			InitializeComponent();
-			BindingContext = new ListeCoursesViewModel(Navigation, lstCourses);
-		}
-
-		private void lstCourses_ItemTapped(object sender, ItemTappedEventArgs e)
-		{
-			((ListeCoursesViewModel)BindingContext).Item_Tapped((Course)e.Item);
+			BindingContext = new AddCourseViewModel(Navigation, listView);
 		}
 	}
 }

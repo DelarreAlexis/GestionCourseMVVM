@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionCourseMVVM.Views.ListeCoureur">
+    
+    <StackLayout>
+        <Grid BackgroundColor="#0066CC">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnBack" Grid.Row="0" Grid.Column="0" Text="Retour" TextColor="White" HorizontalOptions="Start" Command="{Binding RetourCommand}"/>
+            <Label x:Name="lblTitre" VerticalOptions="Center" Grid.Row="0" Grid.Column="1" FontSize="20" TextColor="White" Margin="10,0,0,0"/>
+            <Button x:Name="btnCoureur" Text="Coureurs" Grid.Row="0"  Grid.Column="2" TextColor="White" HorizontalOptions="End" Command="{Binding AjouterCoureurCommand}"/>
+        </Grid>
+        <ListView x:Name="lstCoureur" ItemsSource="{Binding Course.Coureurs}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame CornerRadius="8" BackgroundColor="White" Margin="10,15" HasShadow="True">
+                            <Grid Padding="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Nom}" FontSize="20" TextColor="Black" FontAttributes="Bold" Grid.Column="0"/>
+                                <Label Text="{Binding Prenom}" FontSize="20" TextColor="Black" FontAttributes="Bold" Grid.Column="1"/>
+                                <Label Text="{Binding Age}" FontSize="20" TextColor="Black" FontAttributes="Bold" Grid.Column="2"/>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

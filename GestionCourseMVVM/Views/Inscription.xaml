@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionCourseMVVM.Views.Inscription">
+    <StackLayout>
+        <Grid BackgroundColor="#0066CC">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblTitre" Text="Tous les coureurs" VerticalOptions="Center" Grid.Row="0" FontSize="20" TextColor="White" Margin="10,0,0,0" HorizontalOptions="Start"/>
+        </Grid>
+        <ListView x:Name="lstCoureur" ItemTapped="lstCoureur_ItemTapped" ItemsSource="{Binding Coureurs}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame CornerRadius="8" BackgroundColor="White" Margin="10,15" HasShadow="True">
+                            <Grid Padding="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Nom}" FontSize="20" TextColor="Black" FontAttributes="Bold" Grid.Column="0"/>
+                                <Label Text="{Binding Prenom}" FontSize="20" TextColor="Black" FontAttributes="Bold" Grid.Column="1"/>
+                                <Label Text="{Binding Age}" FontSize="20" TextColor="Black" FontAttributes="Bold" Grid.Column="2"/>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
